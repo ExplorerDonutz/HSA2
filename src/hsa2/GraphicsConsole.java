@@ -646,18 +646,30 @@ public class GraphicsConsole extends JFrame implements MouseListener, MouseMotio
         return in;
     }
 
+    /**
+     * Plays an audio clip once
+     * @param clip The audio clipped to be played
+     */
     public void playSound(Clip clip) {
         if (clip.isRunning()) clip.stop();
         clip.setFramePosition(0);
         clip.start();
     }
 
+    /**
+     * Plays an audio clip in an infinite loop
+     * @param clip The clip to be played
+     */
     public void playSoundLoop(Clip clip) {
         if (clip.isRunning()) clip.stop();
         clip.setFramePosition(0);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
+    /**
+     * Stops an audio clip that was being looped
+     * @param clip The clip to be stopped
+     */
     public void stopSoundLoop(Clip clip) {
         clip.stop();
     }
